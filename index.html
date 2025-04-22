@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robert:self"
+    content="robert vanderzee robbie vanderzee rob vanderzee robert scott vanderzee robbievanderzee robbie-vanderzee robbie.vanderzee">
+  <meta name="description" content="Robert VanDerzee's portfolio">
+  <meta name="keywords"
+    content="Robbie VanDerzee, Robert VanDerzee, Robert, Robbie, UVa, CS, Physics, Microsoft, Apple, Github">
+  <meta name="google-site-verification" content="LwU0TEh9PNrp-MWx4ETCCxdYYdzocteFzJ2ZNscEe8w">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> /robbie/vanderzee/self </title>
+  <!-- includes !-->
+  <!-- styling !-->
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+  <!-- extern !-->
+  <link rel="stylesheet" type="text/css" href="/includes/highlight/default.css">
+  <!-- google !-->
+  <!-- fonts !-->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- script !-->
+  <script src="/assets/js/main.js"></script>
+  <script src="/includes/highlight/highlight.pack.js"></script>
+  <!-- init !-->
+  <script>
+    hljs.registerLanguage('molten', function (hljs) {
+      return {
+        name: 'Molten',
+        aliases: ['molten'],
+        keywords: {},
+        contains: [
+          {
+            scope: 'variable',
+            begin: /[A-Za-z_][A-Za-z0-9_]*(\.[A-Za-z_][A-Za-z0-9_]*)*/,
+            relevance: 3,
+          },
+          {
+            scope: 'punctuation',
+            match: /[\[\]\(\),]/,
+            relevance: 10,
+          }
+        ]
+      };
+    });
+
+    hljs.highlightAll();
+  </script>
+</head>
+
+<body>
+  <div class="grid-container">
+    <header class="header sticky">
+      <div class="header-left">
+        <a class="hover-float" alt="home" aria-label="Home" href="/index.html">
+          <div class="header-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" id="logo">
+              <path fill="#757575"
+                d="M14.5,43.1c-1,0-1.7-0.3-2.2-0.7c-1.4-1-2.3-2.8-2.3-5c-0.1-4.7,2.4-11.5,6.7-18.1 C22.1,11,29,5.2,33.5,5c1,0,1.9,0.2,2.6,0.6c1.9,1.2,2.9,4.1,0.8,7.9c-0.3,0.5-0.9,0.7-1.4,0.4c-0.5-0.3-0.7-0.9-0.4-1.4 c1.3-2.3,1.2-4.4-0.2-5.2C34.6,7.1,34.2,7,33.6,7c-3.3,0.1-9.6,4.8-15.2,13.4C14.3,26.6,11.9,33,12,37.3c0,1.6,0.5,2.8,1.4,3.4 l0.1,0.1c0.4,0.4,2.2,0.5,4.8-1.6c0.4-0.4,1.1-0.3,1.4,0.1c0.4,0.4,0.3,1.1-0.1,1.4C17.5,42.5,15.8,43.1,14.5,43.1z">
+              </path>
+              <path fill="#757575"
+                d="M40,31c-0.4,0-0.8-0.2-0.9-0.6c-0.2-0.5,0.1-1.1,0.6-1.3c2.5-1,4.3-2.6,4.3-4 c0.2-2.9-7.2-6.3-19.8-7C23,18,22,18,21,18c-9.9,0-16.9,2.1-17,5.1c-0.1,1.2,2,3.1,4.4,4c0.5,0.2,0.8,0.8,0.6,1.3 c-0.2,0.5-0.8,0.8-1.3,0.6c-2.9-1.1-5.8-3.5-5.6-6C2.2,18.6,9.3,16,21,16c1,0,2.1,0,3.3,0.1c11,0.6,22,3.6,21.7,9.1 c-0.1,2.3-2.3,4.5-5.6,5.8C40.2,31,40.1,31,40,31z">
+              </path>
+              <path fill="#757575"
+                d="M32.1,44c-0.6,0-1.3-0.1-2-0.4c-4.5-1.5-10.1-7.9-13.8-15.7C13.8,22.7,12.1,16,12,10.7 c-0.1-3.3,0.7-5.4,2.4-6.3c0.5-0.2,1-0.4,1.5-0.4c1.6-0.1,3.5,0.9,5.8,3.3c0.4,0.4,0.4,1,0,1.4c-0.4,0.4-1,0.4-1.4,0 C17.9,6.3,16.6,6,16.1,6c-0.3,0-0.5,0.1-0.8,0.2c-0.9,0.5-1.4,2-1.3,4.5c0.1,4.1,1.3,10.8,4,16.4c4.1,8.5,9.4,13.6,12.7,14.7 c0.9,0.3,1.7,0.3,2.3,0.1c1.9-1.7,1.2-9.8-2.9-19.4c-0.2-0.5,0-1.1,0.5-1.3c0.5-0.2,1.1,0,1.3,0.5c3.8,8.8,5.8,19.2,2.2,21.9 L34,43.6C33.4,43.9,32.8,44,32.1,44z">
+              </path>
+              <path fill="#757575" d="M27,24c0,1.7-1.3,3-3,3s-3-1.3-3-3s1.3-3,3-3S27,22.3,27,24z"></path>
+            </svg>
+          </div>
+        </a>
+      </div>
+      <div class="header-left-divider">
+        <div></div>
+        <div class="solid"></div>
+        <div></div>
+      </div>
+      <div class="header-middle">
+        <div class="header-nav">
+          <div class="header-nav-item hover-underline-from-center scramble-container"> <a href="/"
+              class="header-nav-link scramble">/self</a>
+          </div>
+          <div class="header-nav-item hover-underline-from-center scramble-container"><a
+              href="/pages/projects/projects.html" class="header-nav-link scramble">/projects</a>
+          </div>
+          <div class="header-nav-item hover-underline-from-center scramble-container"><a target="_blank"
+              rel="noopener noreferrer" href="https://projects.vantle.org" class="header-nav-link scramble">/vantle</a>
+          </div>
+          <div class="header-nav-item hover-underline-from-center scramble-container"><a rel="noopener noreferrer"
+              href="mailto:robbie@vanderzee.co" class="header-nav-link scramble">/connect</a>
+          </div>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="header-info">
+          <div class="header-info-item hover-underline-from-center scramble-container"><a target="_blank"
+              rel="noopener noreferrer" href="assets/files/Résumé.pdf" class="header-info-link scramble">/Résumé</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="body">
+      <nav class="nav">
+        <div class="section nav sticky">
+          <a href="#self" class="button nav scramble-container">
+            <span class="button-nav-item scramble name">/self</span>
+            <br>
+          </a>
+          <a href="#skills" class="button nav scramble-container">
+            <span class="button-nav-item scramble name">/skills</span>
+            <br>
+          </a>
+          <ul class="nav">
+            <li>
+              <a href="#skills.languages" class="button nav scramble-container">
+                <span class="button-nav-item scramble name">/languages</span>
+                <br>
+              </a>
+            </li>
+            <li>
+              <a href="#skills.toolchains" class="button nav scramble-container">
+                <span class="button-nav-item scramble name">/toolchains</span>
+                <br>
+              </a>
+            </li>
+            <li>
+              <a href="#skills.systems" class="button nav scramble-container">
+                <span class="button-nav-item scramble name">/systems</span>
+                <br>
+              </a>
+            </li>
+            <li>
+              <a href="#skills.domains" class="button nav scramble-container">
+                <span class="button-nav-item scramble name">/domains</span>
+                <br>
+              </a>
+            </li>
+          </ul>
+          <a href="#industry" class="button nav scramble-container">
+            <span class="button-nav-item scramble name">/industry</span>
+            <br>
+          </a>
+          <ul class="nav">
+            <li>
+              <a href="#industry.microsoft" class="button nav scramble-container">
+                <span class="button-nav-item scramble name">/microsoft</span>
+                <br>
+              </a>
+            </li>
+            <li>
+              <a href="#industry.apple" class="button nav scramble-container">
+                <span class="button-nav-item scramble name">/apple</span>
+                <br>
+              </a>
+            </li>
+          </ul>
+          <a href="#projects" class="button nav scramble-container">
+            <span class="button-nav-item scramble name">/projects</span>
+          </a>
+          <ul class="nav">
+            <li>
+              <a href="#projects.vantle" class="button nav scramble-container">
+                <span class="button-nav-item scramble name">/vantle</span>
+                <br>
+              </a>
+              <ul class="nav">
+                <li>
+                  <a href="#projects.vantle.molten" class="button nav scramble-container">
+                    <span class="button-nav-item scramble name">/molten</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#projects.mathematics" class="button nav scramble-container">
+                <span class="button-nav-item scramble name">/mathematics</span>
+                <br>
+              </a>
+            </li>
+          </ul>
+          <a href="#education" class="button nav scramble-container">
+            <span class="button-nav-item scramble name">/education</span>
+          </a>
+          <ul class="nav">
+            <li>
+              <a href="#education.uva" class="button nav scramble-container">
+                <span class="button-nav-item scramble name">/University of Virginia</span>
+                <br>
+              </a>
+            </li>
+          </ul>
+          <a href="#achievements" class="button nav scramble-container">
+            <span class="button-nav-item scramble name">/achievements</span>
+            <br>
+          </a>
+        </div>
+      </nav>
+      <div class="sections">
+
+        <section id="self">
+          <h2 class="sectioned title"><span class="section title">/Self</span>
+            <div class="section-info-item hover-underline-from-center scramble-container">
+              <a target="_blank" rel="noopener noreferrer" class="section-nav-link scramble"
+                href="https://www.linkedin.com/in/robbie-vanderzee/">Robert Scott VanDerzee</a>
+            </div>
+          </h2>
+          <article class="section">
+            <h3>Software Engineer</h3>
+            <div class="paragraph">Interest in computation and compiler theory. <br> Creator of the <a target="_blank"
+                rel="noopener noreferrer" class="minimal-web-link"
+                href="https://github.com/Vantle/Vantle/tree/main/Molten">Molten programming
+                language</a> and <a target="_blank" rel="noopener noreferrer" class="minimal-web-link"
+                href="https://github.com/Vantle">@Vantle</a> research
+              group.
+            </div>
+            <br>
+            <div class="section body">
+              <div class="video">
+                <video playsinline autoplay muted loop>
+                  <source src="/assets/videos/halo-loop-c.mp4" type="video/mp4">
+                </video>
+                <div class="right">Halo Infinite &copy; Microsoft</div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section id="skills">
+          <h2 class="section title">/Skills</h2>
+          <section id="skills.languages" class="skill-group">
+            <h5>Languages</h5>
+            <div class="skill float">C++23</div>
+            <div class="skill float">C</div>
+            <div class="skill float">Java</div>
+            <div class="skill float">Rust</div>
+            <div class="skill float">MLIR</div>
+            <div class="skill float">Python</div>
+            <div class="skill float">JavaScript</div>
+            <div class="skill float">OCaml</div>
+            <div class="skill float">Assembly</div>
+            <div class="skill float">SQL</div>
+          </section>
+          <section id="skills.toolchains" class="skill-group">
+            <h5>Toolchains</h5>
+            <div class="skill float">LaTeX</div>
+            <div class="skill float">Mathematica</div>
+            <div class="skill float">MATLAB</div>
+            <div class="skill float">Vulkan</div>
+            <div class="skill float">LLVM</div>
+            <div class="skill float">Abseil</div>
+            <div class="skill float">GTest</div>
+            <div class="skill float">React</div>
+            <div class="skill float">Google Sanitizers</div>
+          </section>
+          <section id="skills.systems" class="skill-group">
+            <h5>Systems</h5>
+            <div class="skill float">Kubernetes</div>
+            <div class="skill float">AWS</div>
+            <div class="skill float">Bazel</div>
+            <div class="skill float">Protobuf</div>
+            <div class="skill float">Spring</div>
+            <div class="skill float">WebAssembly</div>
+            <div class="skill float">MongoDB</div>
+            <div class="skill float">Cassandra</div>
+            <div class="skill float">Redis</div>
+          </section>
+          <section id="skills.domains" class="skill-group">
+            <h5>Domains</h5>
+            <div class="skill float">Compilers</div>
+            <div class="skill float">Operating Systems</div>
+            <div class="skill float">Graphics</div>
+            <div class="skill float">Parallelism</div>
+            <div class="skill float">Networking</div>
+            <div class="skill float">Distributed Systems</div>
+          </section>
+        </section>
+        <div class="divider"></div>
+        <section id="industry">
+          <h2 class="section title">/Industry</h2>
+          <section id="industry.microsoft">
+            <h3 class="sectioned"><a target="_blank" rel="noopener noreferrer" class="header-web-link"
+                href="https://azure.microsoft.com/en-us/blog/azure-maia-for-the-era-of-ai-from-silicon-to-software-to-systems/">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo"
+                  style="width:1em;"> Microsoft
+              </a>
+              <span> 2024 </span>
+            </h3>
+            <article class="section">
+              <h4>MAIA (Microsoft Artificial Intelligence Accelerator)</h4>
+              <div class="section">C++, Python, Triton, MLIR, LLVM</div>
+              <div class="section body">
+                <ul>
+                  <li>Designed and implemented Triton compilation discovery mechanisms, saving hundreds of engineering
+                    hours by enabling parallel pre-compilation and linking processes.
+                  </li>
+                  <li>
+                    Developed a MAIA Triton cache that minimized compilation invocations, achieving a 10% average reuse
+                    rate and improving kernel development throughput by approximately 30%.
+                  </li>
+                  <li>
+                    Created a LIT testing framework for our Python DSL, deprecating the hand-written LIT test process.
+                  </li>
+                  <li>
+                    Bound MLIR runtime errors to Python DSL, enabling immediate error feedback for enhanced user
+                    experience.
+                  </li>
+                  <li>
+                    Conducted interviews and trained new hires, supporting a rapidly growing team of over 50 engineers.
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </section>
+
+          <div class="divider"></div>
+          <section id="industry.apple">
+            <h3 class="sectioned"><a target="_blank" rel="noopener noreferrer" class="header-web-link"
+                href="https://www.apple.com/">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo"
+                  style="width:1em;"> Apple
+              </a>
+              <span>2021</span>
+            </h3>
+            <article class="section">
+              <h4>Machine Learning Infrastructure Engineer</h4>
+              <div class="section">Java, Scala, Rust, C++, Bazel, AWS</div>
+              <div class="section body">
+                <ul>
+                  <li>Built a task scheduler and database abstraction service that executed parallel requests derived
+                    from dependency trees.
+                  </li>
+                  <li>
+                    Extended a multivariate experimentation platform with stochastic schedule-based allocations.
+                  </li>
+                  <li>
+                    Developed a data pipeline query service for visualization and experimental analysis.
+                  <li>
+                    Optimized services to support over 100 million low-latency requests per day.
+                  </li>
+                  <li>
+                    Implemented a caching layer for database query aggregation, increasing throughput by 50%.
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </section>
+        </section>
+
+        <div class="divider"></div>
+        <section id="projects">
+          <h2 class="section title">/Projects</h2>
+
+          <section id="projects.vantle">
+            <h3 class="sectioned">
+              <a class="header-web-link" href="https://github.com/Vantle">
+                <img src="/assets/images/vantle-transparent.webp" alt="Vantle Logo" style="width:1em;"> Vantle Research
+              </a>
+              <span>Eternal</span>
+            </h3>
+
+            <section id="projects.vantle.molten">
+              <h4 class="section">Molten: Abstract Computation</h4>
+              <div class="section">Bazel, Rust, Molten</div>
+              <div class="section body">
+                <ul>
+                  <li>Designed a mathematically pure, graph-based intermediate representation for abstract computation.
+                  </li>
+                  <li>
+                    Designed and implemented a text-based front-end targeting the graph-based representation.
+                  </li>
+                  <li>
+                    Created a matrix-vector based graph runtime enabling parallel execution.
+                  </li>
+                  <li>
+                    Built a visually rendered, non-textual programming interface.
+                  </li>
+                  <li>
+                    Testing an NDFSM optimizer that uses reinforcement learning to navigate an incomputable search
+                    space.
+                  </li>
+                </ul>
+              </div>
+              <div class="section body">
+
+                <h5>Philosophy</h4>
+                  <p>
+                    The design of Molten is summarized in axioms:
+                  <ul>
+                    <li>
+                      All theoretical computation consists of transitions between graphs.
+                    </li>
+                    <li>
+                      All optimization is about leveraging time, data, and dependency symmetries between function map
+                      spaces.
+                    </li>
+                    <li>
+                      All contractual behavior should be visible and extendable.
+                    </li>
+                    <li>
+                      Hardware, software, and data are unified.
+                    </li>
+                    <li>
+                      Machines will overtake humans as program generators.
+                    </li>
+                  </ul>
+                  The validity of these axioms is predicated on the results of the development of the Molten Rust
+                  compiler and subsequent Molten Molten compiler.
+                  </p>
+                  <h5>Motivation</h5>
+                  <p>
+                    While my personal motivation is less about "how to make languages better," Molten does address
+                    specific problems. Existing languages have the following theoretically undesirable
+                    features:
+                  <ul>
+                    <li>
+                      Do not separate platform details and compute details.
+                    </li>
+                    <li>
+                      Target basic mathematical operators or hardware intrinsics instead of computing with pure
+                      transitions.
+                    </li>
+                    <li>Assume serialized execution ordering by default.</li>
+                    <li>Have a memory model.</li>
+                    <li>
+                      Have implicit computational contracts.
+                    </li>
+                    <li>
+                      Have metaprogramming as a second class feature; often expressed differently than the core
+                      language.
+                    </li>
+                    <li>
+                      Human opinion cannot be unified.
+                    </li>
+                  </ul>
+
+                  With that in mind, consider this <a target="_blank" rel="noopener noreferrer"
+                    href="https://en.wikipedia.org/wiki/Turing_machine">Turing Machine</a> implemented in Molten,
+                  capable of simulating all computable functions.
+                  <pre class="language-plaintext">
+                      [False] (Boolean),
+                      [True] (Boolean),
+                      [Not.Boolean] (
+                          [True] (False),
+                          [False] (True),
+                      ),
+                      [And.Boolean.Boolean] (
+                          [True.True] (True),
+                          [False.Boolean] (False),
+                      ),
+                      [Or.Boolean.Boolean] (
+                          [True.Boolean] (True),
+                          [False.False] (False),
+                      ),
+                  </pre>
+                  The expression, in this case has only 5 semantic features.
+                  <ul>
+                    <li><code>[] []</code>: indicates a bi-directional transition. You are free to translate back and
+                      forth, these are <a target="_blank" rel="noopener noreferrer"
+                        href="https://en.wikipedia.org/wiki/Isomorphism">isomorphisms.</a></li>
+                    <li><code>[] ()</code>: indicates a forward directional transition from <code>[]</code> to
+                      <code>()</code>. You can only move forward using this rule, these are <a target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://en.wikipedia.org/wiki/Relation_(mathematics)">relations.</a>
+                    </li>
+                    <li><code>,</code>: indicates a partion. These separate statements which are independent from one
+                      another in the program. These can be executed in parallel,
+                      or speculated on, sometimes called <a target="_blank" rel="noopener noreferrer"
+                        href="https://en.wikipedia.org/wiki/Orthogonality">orthogonality.</a> They also prevent relation
+                      constructions between defined to be unrelated features, though program analysis is allowed to
+                      disprove these assumptions and optimize.
+                    </li>
+                    <li><code>.</code>: indicates a conceptual partion. These separate statements which are independent
+                      from one another, but are grouped together into a graph. These are stacked to define constraints,
+                      <a target="_blank" rel="noopener noreferrer"
+                        href="https://en.wikipedia.org/wiki/Semantic_file_system">seldom
+                        used in file systems</a>, but we prefer to call it attributes.
+                    </li>
+                    <li>
+                      All other characters. These are either styling information, or depending on context, execution
+                      labels. For example, <code>And</code> is a label defined, and when grouped with
+                      <code>Boolean.Boolean</code> maps to an operator scope, as seen in the program.
+                    </li>
+                  </ul>
+                  A key idea is that there is no order for program control flow. It is only explicitly
+                  ordered based upon the relations in the program, which are user defined. Further, if a program
+                  has some constraints grouped with <code>.</code> or <code>,</code> there is <em>no</em> contract
+                  defined about the order in which the evaluation may take place. We will expand on this later.
+                  </p>
+                  <p>With this, we have defined a <a target="_blank" rel="noopener noreferrer"
+                      href="https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton">non-deterministic
+                      finite state machine</a>; and provided a framework for
+                    abstraction layer communication which allows for contracts to be built on top of one another. In
+                    addition, we've unified human and computer program interpretability. We can now design other ways to
+                    express these semantics, like in a graphical programming language (the next desire.).</p>
+                  <p>As it's developed, I encourage those who are interested to checkout the project at <a
+                      target="_blank" rel="noopener noreferrer" href="https://projects.vantle.org/">Vantle</a>. It's
+                    still unreleased, so links may be broken and a playground isn't available yet, but send me an email
+                    if you want to setup a time to talk!</p>
+              </div>
+            </section>
+          </section>
+
+
+          <div class="divider"></div>
+          <section id="projects.mathematics" class="followable">
+            <h3 class="sectioned">
+              <span><img src="/assets/images/reimann.svg" alt="Riemann Hypothesis"> Mathematics</span>
+              <span>Eternal</span>
+            </h3>
+            <div class="section">C++, Mathematica</div>
+            <div class="section subtitle">Various studies of pure mathematical domains, namely Number Theory, visualized
+              with Mathematica tools.</div>
+            <div class="section body">
+              <ul>
+                <li>Atypical prime number (-1, 2, 3, 5, ...) translation, factorization, extension, and decomposition.
+                </li>
+                <li>
+                  Complex analysis and complex representation analogues and extensions.
+                </li>
+                <li>
+                  Arithmetic progressions such as Bernoulli numbers and the Hailstone sequences.
+                </li>
+                <li>
+                  Pascal sequences (1; 1, 1; 1, 2, 1; ...) and Pascal matrices, recursive variation analyses.
+                </li>
+              </ul>
+            </div>
+            <div class="video center">
+              <video class="medium" playsinline autoplay muted loop>
+                <source src="/assets/videos/prime_cycle.mp4" type="video/mp4">
+              </video>
+            </div>
+            Above is a render of the progression of a prime factorization variation of the Collatz conjecture, which
+            shows that the highest prime factorizations contains the total cycles. Some variations even suggest that
+            there is only one central ring (cycle); as if some functions have inherent entropy that factoring cannot
+            erase.
+          </section>
+        </section>
+
+        <div class="divider"></div>
+        <section id="education">
+          <h2 class="section title">/Education</h2>
+          <section id="education.uva">
+            <h3 class="sectioned"><a class="header-web-link" href="https://www.virginia.edu/">
+                <img src="/assets/images/UVA.webp" alt="UVA Logo" width="1em" style="width:1em;">
+                University of Virginia Engineering
+              </a>
+              <span>2018</span>
+            </h3>
+            <h5>BS.c, School of Engineering and Applied Science</h5>
+            <h4>Computer Science / Physics</h4>
+            <h5>Courses</h5>
+            <div class="section body">
+              Algorithms; Artificial Intelligence; Calculus; Circuit Design; Classical Mechanics; Compilers; Computer
+              Architecture; Computer Graphics; Data Structures; Discrete Mathematics; Game Design; Linear Algebra; Oper-
+              ating Systems; Ordinary Differential Equations; Probability; Software Engineering; Theory of Computation
+            </div>
+            <h5>Thesis</h5>
+            <div class="section body">P-computation: Algorithmic analyses for prime representations of
+              higher-dimensional numbers</div>
+          </section>
+        </section>
+
+        <div class="divider"></div>
+        <section id="achievements">
+          <h2 class="section title">/Achievements</h2>
+          <ul>
+            <li>
+              E-sports (Codeforces), Expert (Rating: 1633), Top 13%. <span class="right">2023</span>
+            </li>
+            <li>
+              E-sports (Chess), Rank: 45,792 / 3.29M, Top 1% <span class="right">2022</span>
+            </li>
+            <li>
+              E-sports (League of Legends), Grandmaster (Rank: 1,000 / 1.7M, NA), Top 0.06%. <span
+                class="right">2019</span>
+            </li>
+            <li>
+              Language, English (Native), Korean (Professional), Chinese (Beginner)<span class="right">2020</span>
+            </li>
+          </ul>
+        </section>
+
+      </div>
+    </main>
+  </div>
+  <div class="divider"></div>
+  <div class="divider"></div>
+  <div class="divider"></div>
+
+  <footer class="footer">
+    <div class="footer-left"></div>
+    <div class="footer-middle center">
+      <div class="footer-social">
+        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/robbie-vanderzee/">
+          <div class="linkedin">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" id="linkedin">
+              <title>linkedin</title>
+              <path
+                d="M12 12h5.535v2.837h0.079c0.77-1.381 2.655-2.837 5.464-2.837 5.842 0 6.922 3.637 6.922 8.367v9.633h-5.769v-8.54c0-2.037-0.042-4.657-3.001-4.657-3.005 0-3.463 2.218-3.463 4.509v8.688h-5.767v-18z">
+              </path>
+              <path d="M2 12h6v18h-6v-18z"></path>
+              <path d="M8 7c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3z"></path>
+            </svg>
+          </div>
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/robbie-vanderzee">
+          <div class="github">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" id="github">
+              <title>github</title>
+              <path
+                d="M16 0.395c-8.836 0-16 7.163-16 16 0 7.069 4.585 13.067 10.942 15.182 0.8 0.148 1.094-0.347 1.094-0.77 0-0.381-0.015-1.642-0.022-2.979-4.452 0.968-5.391-1.888-5.391-1.888-0.728-1.849-1.776-2.341-1.776-2.341-1.452-0.993 0.11-0.973 0.11-0.973 1.606 0.113 2.452 1.649 2.452 1.649 1.427 2.446 3.743 1.739 4.656 1.33 0.143-1.034 0.558-1.74 1.016-2.14-3.554-0.404-7.29-1.777-7.29-7.907 0-1.747 0.625-3.174 1.649-4.295-0.166-0.403-0.714-2.030 0.155-4.234 0 0 1.344-0.43 4.401 1.64 1.276-0.355 2.645-0.532 4.005-0.539 1.359 0.006 2.729 0.184 4.008 0.539 3.054-2.070 4.395-1.64 4.395-1.64 0.871 2.204 0.323 3.831 0.157 4.234 1.026 1.12 1.647 2.548 1.647 4.295 0 6.145-3.743 7.498-7.306 7.895 0.574 0.497 1.085 1.47 1.085 2.963 0 2.141-0.019 3.864-0.019 4.391 0 0.426 0.288 0.925 1.099 0.768 6.354-2.118 10.933-8.113 10.933-15.18 0-8.837-7.164-16-16-16z">
+              </path>
+            </svg>
+          </div>
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/robbie.s.vanderzee/">
+          <div class="facebook">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" id="facebook">
+              <title>facebook</title>
+              <path d="M19 6h5v-6h-5c-3.86 0-7 3.14-7 7v3h-4v6h4v16h6v-16h5l1-6h-6v-3c0-0.542 0.458-1 1-1z"></path>
+            </svg>
+          </div>
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/Roversee">
+          <div class="twitter">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" id="twitter">
+              <title>twitter</title>
+              <path
+                d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z">
+              </path>
+            </svg>
+          </div>
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href="mailto:robbie@vanderzee.co">
+          <div class="google">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" id="google">
+              <title>contact</title>
+              <path
+                d="M16.319 13.713v5.487h9.075c-0.369 2.356-2.744 6.9-9.075 6.9-5.463 0-9.919-4.525-9.919-10.1s4.456-10.1 9.919-10.1c3.106 0 5.188 1.325 6.375 2.469l4.344-4.181c-2.788-2.612-6.4-4.188-10.719-4.188-8.844 0-16 7.156-16 16s7.156 16 16 16c9.231 0 15.363-6.494 15.363-15.631 0-1.050-0.113-1.85-0.25-2.65l-15.113-0.006z">
+              </path>
+            </svg>
+          </div>
+        </a>
+      </div>
+      <div class="footer-copyright">
+        <img class="signature" src="/assets/fonts/signature/signature.svg" alt="/robbie-vanderzee">
+        <span> © 2025 </span>
+      </div>
+    </div>
+    <div class="footer-right"></div>
+  </footer>
+</body>
+
+</html>
